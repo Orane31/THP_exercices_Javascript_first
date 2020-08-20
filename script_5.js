@@ -53,8 +53,15 @@ console.log("The book n°" + found.id + " is : " + found.title);
 
 // Supprime le livre avec l'ID: 133712 ;
 
+
 for (book in books) {
-    
-}
+    if (books[book].id === 133712) {
+        deleted = books.splice(book, 1);
+    }
+};
+console.log(books);
 
 // Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé).
+
+booksNow = books.filter(book => book.id !== 133712)
+console.log(booksNow.sort((a,z) => (a.title > z.title)));
